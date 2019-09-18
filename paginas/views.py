@@ -9,7 +9,8 @@ def paginaInicioView(req):
         return HttpResponse('<h1>Benvindo ao curso de E-commerce!</h1>')
 
 def paginaAboutView(req):
-    return HttpResponse('<h2>Uma pagina com informação de nosso site!</h2>')
+    #return HttpResponse('<h2>Uma pagina com informação de nosso site!</h2>')
+    return render(req, 'paginas/sobre.html', {})
 
 def paginaProdutoView(req):
     return HttpResponse('<h2>Esta seria uma pagina con informacao de um produto!</h2>')
