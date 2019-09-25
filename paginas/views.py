@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.generic import ListView, DetailView
+
+from .models import Produto
 
 # Create your views here.
 
@@ -20,3 +23,10 @@ def paginaHomeView(req):
 
     # return HttpResponse('<h2>Esta seria uma pagina con informacao de um produto!</h2>')
 
+class ProdutoListView(ListView):
+    model = Produto
+    template_name = "paginas/home.html"
+
+class ProdutoDetailView(DetailView):
+    model = Produto
+    template_name = "paginas/produto_detail.html"
